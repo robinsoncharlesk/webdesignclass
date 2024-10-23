@@ -1,0 +1,1504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern CSS Learning Lab</title>
+    <style>
+        /* Modern CSS Reset and Variables */
+        :root {
+            --primary: #4CAF50;
+            --secondary: #2196F3;
+            --accent: #FF4081;
+            --dark: #333;
+            --light: #f4f4f4;
+            --success: #4CAF50;
+            --warning: #FFC107;
+            --error: #F44336;
+            --transition: all 0.3s ease;
+        }
+
+        /* Original Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Enhanced Section Styling */
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        section:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        h1, h2, h3 {
+            color: var(--dark);
+        }
+
+        /* Enhanced Refresher Section */
+        .refresher {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            padding: 20px;
+            background-color: #e6f7ff;
+            border-radius: 12px;
+            gap: 20px;
+        }
+
+        .refresher div {
+            flex: 1;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+
+        .refresher div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Interactive Elements */
+        .interactive {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        input {
+            width: 150px;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            transition: var(--transition);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+
+        /* Enhanced Button Styling */
+        .submit {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .submit:active {
+            transform: translateY(0);
+        }
+
+        /* Box Model Section */
+        .box-model {
+            padding: 30px;
+            background-color: #ffefd5;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Interactive Box Model Diagram */
+        .box-model-interactive {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 40px auto;
+            perspective: 1000px;
+        }
+
+        .box-layer {
+            position: absolute;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8em;
+            color: transparent;
+            cursor: pointer;
+        }
+
+        .margin-layer { border-color: var(--warning); inset: 0; }
+        .border-layer { border-color: var(--error); inset: 20px; }
+        .padding-layer { border-color: var(--success); inset: 40px; }
+        .content-layer { 
+            border-color: var(--secondary);
+            inset: 60px;
+            background: rgba(33, 150, 243, 0.1);
+        }
+
+        .box-layer:hover {
+            background: rgba(255,255,255,0.9);
+            color: var(--dark);
+            transform: scale(1.02);
+        }
+
+        /* Room Design Section */
+        .room {
+            width: 700px;
+            height: 400px;
+            border: 3px solid var(--dark);
+            margin: 20px auto;
+            padding: 20px;
+            position: relative;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .room:hover {
+            transform: scale(1.01);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        /* Enhanced Controls Section */
+        .controls {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .controls label {
+            display: block;
+            margin: 10px 0 5px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .controls input[type="range"] {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        /* Code Display Section */
+        .starter-code {
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            font-family: 'Monaco', monospace;
+            line-height: 1.5;
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .starter-code pre {
+            margin: 0;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+
+        /* Live Code Editor */
+        .code-editor {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .editor-pane {
+            background: #2d2d2d;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .editor-pane textarea {
+            width: 100%;
+            height: 300px;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-family: 'Monaco', monospace;
+            resize: none;
+            padding: 10px;
+        }
+
+        .preview-pane {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            min-height: 300px;
+        }
+
+        /* Progress Tracker */
+        .progress-tracker {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            background: #ddd;
+            border-radius: 50%;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .progress-dot.active {
+            background: var(--success);
+            transform: scale(1.2);
+        }
+
+        .progress-dot:hover {
+            transform: scale(1.3);
+        }
+
+        /* Popup Notifications */
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--dark);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Flexbox Section */
+        .flex-demo {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .flex-container {
+            display: flex;
+            min-height: 200px;
+            border: 2px dashed var(--primary);
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .flex-item {
+            padding: 20px;
+            margin: 5px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .flex-item:hover {
+            transform: scale(1.1);
+            background: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Tracker -->
+    <div class="progress-tracker">
+        <div class="progress-dot active" title="Box Model"></div>
+        <div class="progress-dot" title="Flexbox"></div>
+        <div class="progress-dot" title="Grid"></div>
+        <div class="progress-dot" title="Animations"></div>
+    </div>
+
+    <header>
+        <h1>Modern CSS Learning Lab</h1>
+    </header>
+
+    <!-- Introduction Section -->
+    <section>
+        <h2>What is CSS?</h2>
+        <p>CSS (Cascading Style Sheets) is the language that styles the web. It controls layout, design, and animations of websites.</p>
+        <div class="refresher">
+            <div>
+                <h3>Selector</h3>
+                <p>Targets HTML elements</p>
+                <code>h1 { color: blue; }</code>
+            </div>
+            <div>
+                <h3>Property</h3>
+                <p>What you want to change</p>
+                <code>color: blue;</code>
+            </div>
+            <div>
+                <h3>Value</h3>
+                <p>How you want to change it</p>
+                <code>blue</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Box Model Section -->
+    <section class="box-model-section">
+        <style>
+            .box-model-section {
+                padding: 30px;
+                background: white;
+                border-radius: 12px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+    
+            .box-model-grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                margin: 20px 0;
+            }
+    
+            .box-model-info {
+                padding: 20px;
+            }
+    
+            .box-model-interactive {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 40px auto;
+}
+    
+            .info-card {
+                background: #f8f9fa;
+                padding: 15px;
+                border-radius: 8px;
+                margin: 10px 0;
+                border-left: 4px solid var(--primary);
+                transition: transform 0.3s ease;
+            }
+    
+            .info-card:hover {
+                transform: translateX(10px);
+            }
+    
+            .box-layer {
+    position: absolute;
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+    
+            .box-layer:hover {
+                background: rgba(255,255,255,0.9);
+                transform: scale(1.02);
+            }
+    
+            .margin-layer { 
+    border-color: #FFC107; 
+    inset: 0;
+    color: #FFC107;
+}
+.margin-layer::after {
+    content: 'Margin';
+    position: absolute;
+    top: -25px;
+    left: 10px;
+}
+    
+            .border-layer { 
+                border-color: #F44336; 
+                inset: 20px;
+                color: #F44336;
+            }
+            .border-layer::after {
+    content: 'Border';
+    position: absolute;
+    top: -5px;
+    right: -45px;
+}
+    
+            .padding-layer { 
+                border-color: #4CAF50; 
+                inset: 40px;
+                color: #4CAF50;
+            }
+            .padding-layer::after {
+    content: 'Padding';
+    position: absolute;
+    bottom: -5px;
+    right: -50px;
+}
+    
+            .content-layer { 
+                border-color: #2196F3;
+                inset: 60px;
+                background: rgba(33, 150, 243, 0.1);
+                color: #2196F3;
+            }
+
+            .content-layer::after {
+    content: 'Content';
+    position: absolute;
+    bottom: -25px;
+    left: 10px;
+}
+    
+            .layer-info {
+                display: none;
+                position: absolute;
+                right: -220px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 200px;
+                padding: 10px;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                font-size: 0.9em;
+                z-index: 10;
+            }
+    
+            .box-layer:hover .layer-info {
+                display: block;
+            }
+    
+            .controls {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 8px;
+                margin-top: 20px;
+            }
+    
+            .example-use {
+                background: #e9ecef;
+                padding: 15px;
+                border-radius: 8px;
+                margin-top: 10px;
+                font-family: monospace;
+            }
+        </style>
+    
+        <h2>Interactive Box Model</h2>
+        
+        <div class="box-model-grid">
+            <div class="box-model-info">
+                <h3>Understanding the Box Model</h3>
+                <p>The CSS Box Model is fundamental to web layout - it defines how every element on a webpage takes up space. Think of each HTML element as a box with multiple layers:</p>
+                
+                <div class="info-card">
+                    <h4>Why is it important?</h4>
+                    <ul>
+                        <li>Controls spacing and layout</li>
+                        <li>Affects how elements interact</li>
+                        <li>Essential for responsive design</li>
+                        <li>Key to professional layouts</li>
+                    </ul>
+                </div>
+    
+                <div class="example-use">
+                    /* Example CSS */
+                    .element {
+                        margin: 20px;
+                        border: 2px solid black;
+                        padding: 10px;
+                        width: 200px;
+                    }
+                </div>
+            </div>
+    
+            <div class="box-model-demo">
+                <div class="box-model-interactive">
+                    <div class="box-layer margin-layer">
+                        Margin
+                        <div class="layer-info">
+                            <strong>Margin</strong>
+                            <p>External spacing between elements. Used for:</p>
+                            <ul>
+                                <li>Spacing between elements</li>
+                                <li>Centering elements</li>
+                                <li>Creating whitespace</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box-layer border-layer">
+                        Border
+                        <div class="layer-info">
+                            <strong>Border</strong>
+                            <p>The element's border. Can be:</p>
+                            <ul>
+                                <li>Different styles (solid, dashed)</li>
+                                <li>Various colors</li>
+                                <li>Different widths</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box-layer padding-layer">
+                        Padding
+                        <div class="layer-info">
+                            <strong>Padding</strong>
+                            <p>Internal spacing. Used for:</p>
+                            <ul>
+                                <li>Internal spacing</li>
+                                <li>Text spacing from borders</li>
+                                <li>Content breathing room</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box-layer content-layer">
+                        Content
+                        <div class="layer-info">
+                            <strong>Content</strong>
+                            <p>The actual content area:</p>
+                            <ul>
+                                <li>Text content</li>
+                                <li>Images</li>
+                                <li>Other elements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="controls">
+                    <label for="boxSize">Adjust Box Model Spacing:</label>
+                    <input 
+                        type="range" 
+                        id="boxSize" 
+                        min="0" 
+                        max="50" 
+                        value="20" 
+                        oninput="updateBoxModel(this.value)"
+                    >
+                    <p class="spacing-info">Try adjusting the spacing to see how each layer affects the overall layout!</p>
+                </div>
+            </div>
+        </div>
+        <section class="room-tutorial">
+            <style>
+                .tutorial-container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 20px;
+                }
+        
+                .instruction-panel {
+                    background: white;
+                    border-radius: 12px;
+                    padding: 20px;
+                    margin: 20px 0;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                }
+        
+                .code-container {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 20px;
+                    margin: 20px 0;
+                }
+        
+                .code-block {
+                    background: #1e1e1e;
+                    color: #fff;
+                    padding: 20px;
+                    border-radius: 8px;
+                    position: relative;
+                }
+        
+                .copy-button {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    background: rgba(255,255,255,0.1);
+                    border: none;
+                    color: white;
+                    padding: 5px 10px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+        
+                .copy-button:hover {
+                    background: rgba(255,255,255,0.2);
+                }
+        
+                .step-card {
+                    background: #f8f9fa;
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin: 10px 0;
+                    border-left: 4px solid var(--primary);
+                }
+        
+                .hint-box {
+                    background: #e8f5e9;
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin: 10px 0;
+                    border-left: 4px solid #4CAF50;
+                }
+        
+                .challenge-box {
+                    background: #fff3e0;
+                    padding: 15px;
+                    border-radius: 8px;
+                    margin: 10px 0;
+                    border-left: 4px solid #FF9800;
+                }
+        
+                pre {
+                    margin: 0;
+                    white-space: pre-wrap;
+                    font-family: 'Monaco', monospace;
+                    font-size: 14px;
+                }
+        
+                .code-label {
+                    color: #888;
+                    font-size: 0.9em;
+                    margin-bottom: 5px;
+                }
+            </style>
+        
+            <div class="tutorial-container">
+                <div class="instruction-panel">
+                    <h3>🎨 Room Designer Exercise</h3>
+                    <p>Welcome to the Room Designer! In this exercise, you'll practice using the CSS Box Model by creating and styling a room layout.</p>
+        
+                    <div class="step-card">
+                        <h4>Learning Objectives:</h4>
+                        <ul>
+                            <li>Understand how padding affects inner spacing</li>
+                            <li>Learn how margins create space between elements</li>
+                            <li>Practice using borders to define boundaries</li>
+                            <li>Experience how the box model properties work together</li>
+                        </ul>
+                    </div>
+        
+                    <div class="hint-box">
+                        <h4>💡 Quick Tips:</h4>
+                        <ul>
+                            <li>Padding adds space inside elements</li>
+                            <li>Margins add space between elements</li>
+                            <li>Borders add boundaries around elements</li>
+                            <li>Try different values to see how they affect the layout!</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="code-container">
+                    <div class="code-block">
+                        <div class="code-label">HTML Starter Code</div>
+                        <button class="copy-button" onclick="copyCode('html-code')">Copy</button>
+                        <pre id="html-code">
+        &lt;!DOCTYPE html&gt;
+        &lt;html lang="en"&gt;
+        &lt;head&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+            &lt;title&gt;Room Designer&lt;/title&gt;
+            &lt;link rel="stylesheet" href="styles.css"&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &lt;div class="room"&gt;
+                &lt;div id="sofa"&gt;Sofa&lt;/div&gt;
+                &lt;div id="table"&gt;Table&lt;/div&gt;
+                &lt;div id="frame"&gt;Picture Frame&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;
+        &lt;/html&gt;</pre>
+                    </div>
+        
+                    <div class="code-block">
+                        <div class="code-label">CSS Starter Code</div>
+                        <button class="copy-button" onclick="copyCode('css-code')">Copy</button>
+                        <pre id="css-code">
+        /* Room container */
+        .room {
+            width: 800px;
+            height: 500px;
+            border: 3px solid #333;
+            margin: 20px auto;
+            padding: 20px;
+            position: relative;
+            background: #f5f5f5;
+        }
+        
+        /* Sofa styles */
+        #sofa {
+            width: 250px;
+            height: 100px;
+            background: #8B4513;
+            position: absolute;
+            bottom: 50px;
+            left: 50px;
+            /* Try adjusting the padding! */
+            padding: 0px;
+        }
+        
+        /* Table styles */
+        #table {
+            width: 120px;
+            height: 120px;
+            background: #A0522D;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* Try adjusting the margin! */
+            margin: 0px;
+        }
+        
+        /* Picture frame styles */
+        #frame {
+            width: 150px;
+            height: 180px;
+            background: #DEB887;
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            /* Try adjusting the border! */
+            border: 0px solid #8B4513;
+        }</pre>
+                    </div>
+                </div>
+        
+                <div class="challenge-box">
+                    <h4>🌟 Challenges:</h4>
+                    <ol>
+                        <li>Add 20px padding to the sofa to make it more comfortable</li>
+                        <li>Give the table a 15px margin to create space around it</li>
+                        <li>Create a 10px border for the picture frame</li>
+                        <li>Try combining different values to create your perfect room layout!</li>
+                    </ol>
+                </div>
+            </div>
+        
+    <!-- Room Designer Section -->
+    <section class="room-designer">
+        <style>
+            .room {
+                width: 800px;
+                height: 500px;
+                border: 3px solid #333;
+                margin: 20px auto;
+                padding: 20px;
+                position: relative;
+                background: #f5f5f5;
+                border-radius: 12px;
+                box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+            }
+    
+            /* Enhanced Sofa */
+            #sofa {
+                width: 250px;
+                height: 100px;
+                background: #8B4513;
+                position: absolute;
+                bottom: 50px;
+                left: 50px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            }
+    
+            #sofa::before {
+                content: '';
+                position: absolute;
+                width: 250px;
+                height: 60px;
+                background: #A0522D;
+                bottom: 0;
+                border-radius: 0 0 10px 10px;
+            }
+    
+            #sofa::after {
+                content: '';
+                position: absolute;
+                width: 250px;
+                height: 40px;
+                background: #8B4513;
+                top: 0;
+                border-radius: 10px 10px 0 0;
+                box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+            }
+    
+            /* Enhanced Table */
+            #table {
+                width: 120px;
+                height: 120px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            #table::before {
+                content: '';
+                position: absolute;
+                width: 120px;
+                height: 20px;
+                background: #5C4033;
+                top: 0;
+                border-radius: 5px 5px 0 0;
+            }
+    
+            #table::after {
+                content: '';
+                position: absolute;
+                width: 80px;
+                height: 100px;
+                background: #8B4513;
+                bottom: 0;
+                left: 20px;
+                clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+            }
+    
+            /* Enhanced Picture Frame */
+            #frame {
+                width: 150px;
+                height: 180px;
+                position: absolute;
+                top: 50px;
+                right: 50px;
+                background: #DEB887;
+                border: 0px solid #8B4513;
+                transition: all 0.3s ease;
+            }
+    
+            #frame::before {
+                content: '';
+                position: absolute;
+                inset: 15px;
+                background: linear-gradient(45deg, #87CEEB, #4682B4);
+                box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+            }
+    
+            /* Controls Enhancement */
+            .controls {
+                background: white;
+                padding: 20px;
+                border-radius: 12px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                margin-top: 20px;
+            }
+    
+            .control-group {
+                margin: 15px 0;
+            }
+    
+            .control-group label {
+                display: block;
+                margin-bottom: 5px;
+                color: #333;
+                font-weight: 500;
+            }
+    
+            input[type="range"] {
+                width: 200px;
+                height: 8px;
+                border-radius: 4px;
+                background: #e0e0e0;
+                outline: none;
+                transition: all 0.3s ease;
+            }
+    
+            input[type="range"]:hover {
+                background: #d0d0d0;
+            }
+    
+            .value-display {
+                display: inline-block;
+                margin-left: 10px;
+                background: #f0f0f0;
+                padding: 2px 8px;
+                border-radius: 4px;
+                font-size: 0.9em;
+            }
+        </style>
+    
+        <h2 style="text-align: center;">Room Designer</h2>
+        
+        <div class="room" id="room">
+            <div id="sofa"></div>
+            <div id="table"></div>
+            <div id="frame"></div>
+        </div>
+    
+        <div class="controls">
+            <h3>Adjust Room Items:</h3>
+            
+            <div class="control-group">
+                <label for="sofaPadding">
+                    Sofa Padding:
+                    <span class="value-display" id="sofaPaddingValue">5px</span>
+                </label>
+                <input 
+                    type="range" 
+                    id="sofaPadding" 
+                    min="0" 
+                    max="20" 
+                    value="5" 
+                    oninput="adjustRoomItems('sofa', 'padding', this.value)"
+                >
+            </div>
+    
+            <div class="control-group">
+                <label for="tableMargin">
+                    Table Margin:
+                    <span class="value-display" id="tableMarginValue">10px</span>
+                </label>
+                <input 
+                    type="range" 
+                    id="tableMargin" 
+                    min="0" 
+                    max="50" 
+                    value="10" 
+                    oninput="adjustRoomItems('table', 'margin', this.value)"
+                >
+            </div>
+    
+            <div class="control-group">
+                <label for="frameBorder">
+                    Frame Border:
+                    <span class="value-display" id="frameBorderValue">0px</span>
+                </label>
+                <input 
+                    type="range" 
+                    id="frameBorder" 
+                    min="0" 
+                    max="20" 
+                    value="0" 
+                    oninput="adjustRoomItems('frame', 'border', this.value)"
+                >
+            </div>
+        </div>
+
+    <!-- Flexbox Demo Section -->
+    <section class="flexbox-tutorial">
+        <style>
+            .flexbox-container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+    
+            .concept-card {
+                background: white;
+                border-radius: 12px;
+                padding: 20px;
+                margin: 20px 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+    
+            .flex-demo {
+                border: 2px dashed #4CAF50;
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 8px;
+                min-height: 200px;
+            }
+    
+            .flex-item {
+                background: #2196F3;
+                color: white;
+                padding: 20px;
+                margin: 5px;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+            }
+    
+            .flex-item:hover {
+                transform: scale(1.05);
+            }
+    
+            .property-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                margin: 20px 0;
+            }
+    
+            .property-card {
+                background: #f8f9fa;
+                padding: 15px;
+                border-radius: 8px;
+                border-left: 4px solid #2196F3;
+            }
+    
+            .visual-example {
+                background: #f8f9fa;
+                padding: 15px;
+                border-radius: 8px;
+                margin: 10px 0;
+            }
+    
+            .controls-panel {
+                background: #f0f8ff;
+                padding: 20px;
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+    
+            .challenge-section {
+                background: #fff3e0;
+                padding: 20px;
+                border-radius: 12px;
+                margin: 20px 0;
+            }
+    
+            .code-block {
+                background: #1e1e1e;
+                color: #fff;
+                padding: 20px;
+                border-radius: 8px;
+                position: relative;
+                margin: 10px 0;
+            }
+    
+            .result-preview {
+                border: 2px solid #ccc;
+                padding: 20px;
+                border-radius: 8px;
+                margin: 10px 0;
+                min-height: 200px;
+            }
+        </style>
+    
+        <div class="flexbox-container">
+            <div class="concept-card">
+                <h2>Understanding Flexbox</h2>
+                <p>Flexbox is a modern CSS layout model that makes it easier to design flexible responsive layouts without using floats or positioning. It's particularly powerful for:</p>
+                
+                <div class="property-grid">
+                    <div class="property-card">
+                        <h4>🎯 Perfect Centering</h4>
+                        <p>Easily center elements both vertically and horizontally</p>
+                    </div>
+                    <div class="property-card">
+                        <h4>📱 Responsive Design</h4>
+                        <p>Create layouts that adapt to different screen sizes</p>
+                    </div>
+                    <div class="property-card">
+                        <h4>↔️ Dynamic Spacing</h4>
+                        <p>Distribute space between items automatically</p>
+                    </div>
+                    <div class="property-card">
+                        <h4>🔄 Reordering</h4>
+                        <p>Change element order without modifying HTML</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="concept-card">
+                <h3>Key Flexbox Properties</h3>
+                <div class="visual-example">
+                    <h4>Container Properties:</h4>
+                    <ul>
+                        <li><code>display: flex</code> - Enables Flexbox</li>
+                        <li><code>justify-content</code> - Aligns items horizontally</li>
+                        <li><code>align-items</code> - Aligns items vertically</li>
+                        <li><code>flex-direction</code> - Sets the main axis</li>
+                        <li><code>flex-wrap</code> - Controls wrapping behavior</li>
+                    </ul>
+                </div>
+    
+                <div class="flex-demo" id="interactiveDemo" style="display: flex;">
+                    <div class="flex-item">1</div>
+                    <div class="flex-item">2</div>
+                    <div class="flex-item">3</div>
+                </div>
+    
+                <div class="controls-panel">
+                    <h4>Try it yourself:</h4>
+                    <div>
+                        <label for="justifyContent">justify-content:</label>
+                        <select id="justifyContent" onchange="updateFlexbox()">
+                            <option value="flex-start">flex-start</option>
+                            <option value="center">center</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-around">space-around</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="alignItems">align-items:</label>
+                        <select id="alignItems" onchange="updateFlexbox()">
+                            <option value="stretch">stretch</option>
+                            <option value="center">center</option>
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="challenge-section">
+                <h3>🌟 Flexbox Challenge: Build a Navigation Bar</h3>
+                <p>Create a responsive navigation bar using Flexbox. Your navigation should:</p>
+                <ul>
+                    <li>Display items in a row</li>
+                    <li>Space items evenly</li>
+                    <li>Center items vertically</li>
+                    <li>Add hover effects</li>
+                </ul>
+    
+                <div class="code-block">
+                    <div class="code-label">HTML Starter Code</div>
+                    <button class="copy-button" onclick="copyCode('nav-html')">Copy</button>
+                    <pre id="nav-html">
+    &lt;nav class="flex-nav"&gt;
+        &lt;a href="#" class="nav-item"&gt;Home&lt;/a&gt;
+        &lt;a href="#" class="nav-item"&gt;About&lt;/a&gt;
+        &lt;a href="#" class="nav-item"&gt;Services&lt;/a&gt;
+        &lt;a href="#" class="nav-item"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;</pre>
+                </div>
+    
+                <div class="code-block">
+                    <div class="code-label">CSS Starter Code</div>
+                    <button class="copy-button" onclick="copyCode('nav-css')">Copy</button>
+                    <pre id="nav-css">
+    .flex-nav {
+        /* Add display: flex */
+        background: #333;
+        padding: 1rem;
+        /* Add justify-content */
+        /* Add align-items */
+    }
+    
+    .nav-item {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        /* Add hover effects */
+        transition: all 0.3s ease;
+    }
+    
+    /* Add hover styles for nav-item */</pre>
+                </div>
+    
+                <div class="hint-box">
+                    <h4>💡 Hints:</h4>
+                    <ul>
+                        <li>Use <code>display: flex</code> on the container</li>
+                        <li>Try <code>justify-content: space-around</code> for spacing</li>
+                        <li>Add <code>background-color</code> changes on hover</li>
+                        <li>Consider adding <code>border-radius</code> for style</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Popup for notifications -->
+  
+
+    <script>
+        
+        // Box Model Interactive Demo
+        function updateBoxModel(value) {
+            const layers = document.querySelectorAll('.box-layer');
+            layers.forEach((layer, index) => {
+                const inset = value * (index + 1);
+                layer.style.inset = `${inset}px`;
+            });
+            
+            // Update spacing info
+            document.querySelector('.spacing-info').textContent = 
+                `Current spacing: ${value}px - Notice how this affects each layer of the box model!`;
+        }
+
+        // Initialize tooltips and click handlers
+        document.addEventListener('DOMContentLoaded', () => {
+            const layers = document.querySelectorAll('.box-layer');
+            layers.forEach(layer => {
+                layer.addEventListener('click', () => {
+                    const layerName = layer.textContent.split('\n')[0].trim();
+                    showPopup(`${layerName} is a crucial part of the Box Model - hover to learn more!`);
+                });
+            });
+        });
+
+        // Room Items Adjustment
+        function adjustRoomItems(elementId, property, value) {
+            const element = document.getElementById(elementId);
+            const valueDisplay = document.getElementById(`${elementId}${property}Value`);
+            
+            if (property === 'padding') {
+                element.style.padding = `${value}px`;
+                valueDisplay.textContent = `${value}px`;
+            } else if (property === 'margin') {
+                element.style.margin = `${value}px`;
+                valueDisplay.textContent = `${value}px`;
+            } else if (property === 'border') {
+                element.style.borderWidth = `${value}px`;
+                valueDisplay.textContent = `${value}px`;
+            }
+
+            // Show visual feedback
+            showPopup(`${elementId.charAt(0).toUpperCase() + elementId.slice(1)} ${property} set to ${value}px`);
+        }
+
+        // Initialize the room
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial values
+            adjustRoomItems('sofa', 'padding', 5);
+            adjustRoomItems('table', 'margin', 10);
+            adjustRoomItems('frame', 'border', 0);
+
+            // Add hover effects
+            const items = ['sofa', 'table', 'frame'];
+            items.forEach(item => {
+                const element = document.getElementById(item);
+                element.addEventListener('mouseenter', () => {
+                    element.style.transform = 'scale(1.02)';
+                });
+                element.addEventListener('mouseleave', () => {
+                    element.style.transform = 'scale(1)';
+                });
+            });
+        });
+        // Flexbox Controls
+        function updateFlexbox() {
+            const container = document.getElementById('flexContainer');
+            const justifyContent = document.getElementById('justifyContent').value;
+            const alignItems = document.getElementById('alignItems').value;
+
+            container.style.justifyContent = justifyContent;
+            container.style.alignItems = alignItems;
+
+            showPopup(`Flexbox updated: justify-content: ${justifyContent}, align-items: ${alignItems}`);
+        }
+
+        // Progress Tracking
+        function updateProgress(sectionIndex) {
+            const dots = document.querySelectorAll('.progress-dot');
+            dots.forEach((dot, index) => {
+                if (index <= sectionIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Popup Notifications
+        function showPopup(message) {
+            const popup = document.getElementById('popup');
+            popup.textContent = message;
+            popup.style.display = 'block';
+            
+            // Add animation class
+            popup.classList.add('popup-animate');
+
+            // Remove popup after 3 seconds
+            setTimeout(() => {
+                popup.style.display = 'none';
+                popup.classList.remove('popup-animate');
+            }, 3000);
+        }
+
+        // Intersection Observer for Progress Tracking
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            root: null,
+            threshold: 0.5,
+            rootMargin: '0px'
+        };
+
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionIndex = Array.from(sections).indexOf(entry.target);
+                    updateProgress(sectionIndex);
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => sectionObserver.observe(section));
+
+        // Initialize interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial box model visualization
+            updateBoxModel(20);
+
+            // Set initial flexbox properties
+            updateFlexbox();
+
+            // Add click handlers to box model layers
+            document.querySelectorAll('.box-layer').forEach(layer => {
+                layer.addEventListener('click', () => {
+                    const layerType = layer.textContent;
+                    showPopup(`${layerType} is part of the CSS Box Model`);
+                });
+            });
+
+            // Initialize room items with default styles
+            const roomItems = {
+                sofa: { padding: '5px', background: '#8B4513' },
+                table: { margin: '10px', background: '#A0522D' },
+                frame: { borderWidth: '3px', background: '#DEB887' }
+            };
+
+            Object.entries(roomItems).forEach(([id, styles]) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    Object.entries(styles).forEach(([property, value]) => {
+                        element.style[property] = value;
+                    });
+                }
+            });
+
+            // Add hover effect to code examples
+            document.querySelectorAll('code').forEach(code => {
+                code.addEventListener('mouseenter', () => {
+                    code.style.backgroundColor = 'rgba(76, 175, 80, 0.1)';
+                });
+                code.addEventListener('mouseleave', () => {
+                    code.style.backgroundColor = 'transparent';
+                });
+            });
+        });
+
+        // Helper function to create ripple effect on buttons
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            
+            const diameter = Math.max(rect.width, rect.height);
+            const radius = diameter / 2;
+            
+            ripple.style.width = ripple.style.height = `${diameter}px`;
+            ripple.style.left = `${event.clientX - rect.left - radius}px`;
+            ripple.style.top = `${event.clientY - rect.top - radius}px`;
+            ripple.classList.add('ripple');
+            
+            const rippleContainer = document.createElement('span');
+            rippleContainer.classList.add('ripple-container');
+            
+            rippleContainer.appendChild(ripple);
+            button.appendChild(rippleContainer);
+            
+            setTimeout(() => {
+                rippleContainer.remove();
+            }, 1000);
+        }
+
+        // Add ripple effect to all buttons
+        document.querySelectorAll('.submit').forEach(button => {
+            button.addEventListener('click', createRipple);
+        });
+        function copyCode(elementId) {
+            const codeBlock = document.getElementById(elementId);
+            const text = codeBlock.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const button = codeBlock.parentElement.querySelector('.copy-button');
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        function updateFlexbox() {
+            const demo = document.getElementById('interactiveDemo');
+            const justifyContent = document.getElementById('justifyContent').value;
+            const alignItems = document.getElementById('alignItems').value;
+
+            demo.style.justifyContent = justifyContent;
+            demo.style.alignItems = alignItems;
+
+            showPopup(`Updated: justify-content: ${justifyContent}, align-items: ${alignItems}`);
+        }
+
+        function copyCode(elementId) {
+            const codeBlock = document.getElementById(elementId);
+            const text = codeBlock.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const button = codeBlock.parentElement.querySelector('.copy-button');
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Example solution popup
+        function showSolution() {
+            const solution = `
+.flex-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #333;
+    padding: 1rem;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background: #4CAF50;
+    transform: translateY(-2px);
+}`;
+            alert('Solution:\n\n' + solution);
+        }
+    </script>
+</body>
+</html>
