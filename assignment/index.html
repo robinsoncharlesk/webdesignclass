@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Assisted Website Redesign Assignment</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRNtVIF3sKgXoqNR5NcZb5ThqTPQcL69X+jhVHg6QzR8L1B+Z3VnDOW+V6VFHyfXhL6D0Qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .header-section {
+            background-color: #007bff;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .header-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .header-section p {
+            font-size: 1.2rem;
+        }
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .accordion-button:not(.collapsed) {
+            color: #fff;
+            background-color: #007bff;
+        }
+        /* Custom styles for ISTE Evaluator Modal */
+        .modal-header {
+            background-color: #007bff;
+            color: white;
+        }
+        .modal-title {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">AI WebRedesign</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#objective">Objective</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#steps">Steps</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#assessment">Assessment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#extensions">Extensions</a>
+            </li>
+            <!-- ISTE Evaluator Button -->
+            <li class="nav-item">
+              <button type="button" class="btn btn-outline-info ms-3" data-bs-toggle="modal" data-bs-target="#isteModal">
+                <i class="fas fa-user-check"></i> ISTE Evaluators Click Here
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <h1>AI-Assisted Website Redesign</h1>
+            <p>Use AI to create a cool and ethical website redesign project!</p>
+        </div>
+    </section>
+
+    <!-- Objective Section -->
+    <section id="objective" class="container my-5">
+        <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
+        <p>
+            In this project, you'll use AI tools to help redesign a website. You'll focus on creating awesome content and designs while keeping things ethical and legal. This means thinking about copyright, giving proper credit to AI-generated stuff, and making sure everything you create follows the rules. This project helps you learn how to use digital tools safely and responsibly, aligning with ISTE Criteria 10.
+        </p>
+    </section>
+
+    <!-- Steps Section -->
+    <section id="steps" class="container my-5">
+        <h2 class="section-title"><i class="fas fa-tasks"></i> Steps</h2>
+        <div class="accordion" id="assignmentAccordion">
+            <!-- Step 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" 
+                    aria-expanded="true" aria-controls="collapseOne">
+                    1. AI-Generated Content with Ethical Considerations
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Task:</strong> Use an AI tool like ChatGPT to create content for two parts of your website, such as the "About Us" page and product descriptions.
+                    <br><br>
+                    <strong>Refinement:</strong> Personalize and tweak the AI-generated content so it matches your website's style and voice.
+                    <br><br>
+                    <strong>Research:</strong> Check if the AI-generated content has any copyright restrictions. Think about how to keep the content ethical and legal.
+                    <br><br>
+                    <strong>Deliverable:</strong>
+                    <ul>
+                        <li>Submit both the original AI-generated content and your customized final version.</li>
+                        <li><strong>Reflection Requirement:</strong> Write a short reflection about the legal and ethical aspects of using AI-generated content. Explain how you made sure your content follows ethical and copyright rules.</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Content Creation for Homepage with Proper Attribution
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Task:</strong> Use an AI tool to come up with a headline, a tagline, and a short introduction for your website's homepage. Make sure to adjust the copy so it reflects your unique brand voice.
+                    <br><br>
+                    <strong>Learn:</strong> Learn how to give proper credit for AI-generated content on your webpage. Discuss when and how to attribute, based on the AI tool's guidelines.
+                    <br><br>
+                    <strong>Deliverable:</strong>
+                    <ul>
+                        <li>Submit both the AI-generated and your final edited versions of the homepage content.</li>
+                        <li>Include a short paragraph explaining how you decided to attribute the AI-generated content, based on ethical guidelines and your research on copyright.</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. AI-Generated Design Inspiration with Ethical Sourcing
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Task:</strong> Use AI tools like DALL·E or ChatGPT to generate design ideas for your website. This could include layout ideas, color schemes, or graphics. Make sure any media you use follows Creative Commons or public domain licensing.
+                    <br><br>
+                    <strong>Investigate:</strong> Look into how AI-generated images are licensed. Decide if you can use, edit, or share them for your project.
+                    <br><br>
+                    <strong>Deliverable:</strong>
+                    <ul>
+                        <li>Submit a mood board or screenshots of your design inspirations, highlighting the AI-generated elements.</li>
+                        <li><strong>Reflection:</strong> Write a short explanation of how you checked that the AI-generated elements are legally usable. Mention any challenges you faced in ensuring the media complies with copyright or licensing rules.</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Final Submission: Ethical Compliance Showcase
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Task:</strong> Create a fun and engaging presentation (like slides, a video, or even a comic strip) that shows how you made sure everything in your redesign is ethical. Include:
+                    <ul>
+                        <li>How you gave credit for AI-generated content.</li>
+                        <li>Information about the licenses for any AI-generated images or design elements you used.</li>
+                        <li>A reflection on how AI plays a role in intellectual property and how you'll use AI tools responsibly in future projects.</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Criteria Section -->
+    <section id="assessment" class="container my-5">
+        <h2 class="section-title"><i class="fas fa-check-circle"></i> Assessment Criteria</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Effective Use of AI:</strong> Did you use AI tools effectively to help create content, code, or design?</li>
+            <li class="list-group-item"><strong>Ethical Compliance:</strong> Did you use AI-generated or sourced content ethically and give proper credit?</li>
+            <li class="list-group-item"><strong>Reflection Quality:</strong> Do you show a clear understanding of AI ethics, intellectual property, and licensing?</li>
+            <li class="list-group-item"><strong>Web Design Quality:</strong> Is your webpage functional, visually appealing, and ethically sound?</li>
+        </ul>
+    </section>
+
+    <!-- Extension Ideas Section -->
+    <section id="extensions" class="container my-5">
+        <h2 class="section-title"><i class="fas fa-rocket"></i> Extension Ideas</h2>
+        <ul>
+            <li><strong>Advanced AI Use:</strong> Try using AI tools to automatically check for copyright compliance or to create accessible alt text for images.</li>
+            <li><strong>AI Ethics Debate:</strong> Participate in a debate about whether AI-generated content should be considered intellectual property or if it should be freely available for public use.</li>
+        </ul>
+        <p>
+            This updated assignment not only helps you use AI to boost your creative projects but also helps you understand ethical, safe, and legal practices related to AI and digital content. Let me know if you'd like to make any more changes or add something new!
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AI WebRedesign Assignment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ISTE Evaluator Modal -->
+    <div class="modal fade" id="isteModal" tabindex="-1" aria-labelledby="isteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="isteModalLabel"><i class="fas fa-user-check"></i> ISTE Criteria 10 Alignment</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>This assignment aligns with <strong>ISTE Standards for Educators - Criteria 10</strong> by actively mentoring students in digital citizenship. Here's how each part of the assignment meets what evaluators are looking for:</p>
+            <hr>
+            
+            <!-- Contextualization Section -->
+            <h6><i class="fas fa-users"></i> Contextualization</h6>
+            <p><strong>Identify Your Learners:</strong> This project is designed for high school students in a digital media or computer science class. There are about 25 students with different levels of experience in web design and AI tools.</p>
+            <p><strong>Summary of the Activity:</strong> The AI-Assisted Website Redesign assignment guides students to use AI tools to create and improve website content and design. It emphasizes ethical considerations and legal compliance, helping students learn responsible digital citizenship and understand intellectual property.</p>
+            <hr>
+            
+            <h6><i class="fas fa-book-open"></i> Lesson Plans and Unit Plans</h6>
+            <p>The assignment includes clear, step-by-step instructions that fit into lesson plans focused on digital citizenship. Each step highlights ethical considerations, copyright laws, and the responsible use of AI tools.</p>
+            <hr>
+            <h6><i class="fas fa-file-alt"></i> Student Work Samples</h6>
+            <p>Students submit both original AI-generated content and their customized versions, showing their understanding of safe, ethical, and legal practices. Their reflections demonstrate their knowledge of AI ethics and intellectual property.</p>
+            <hr>
+            <h6><i class="fas fa-comments"></i> Documentation of Discussions and Activities</h6>
+            <p>The assignment includes reflection tasks where students discuss the legal and ethical aspects of using AI-generated content. This encourages meaningful conversations and activities around intellectual property and the responsible use of digital tools.</p>
+            <hr>
+            <h6><i class="fas fa-user-tie"></i> Modeling Responsible Digital Citizenship</h6>
+            <p>By guiding students in creating ethical content and giving proper credit, educators demonstrate responsible digital citizenship. The assignment stresses the importance of following copyright laws and ethical standards, setting a strong example for students.</p>
+            <hr>
+            <h5 class="mt-4"><i class="fas fa-lightbulb"></i> Additional Evidence</h5>
+            <ul>
+                <li><strong>Interactive Elements:</strong> The use of interactive web components like accordions and modals shows how technology is used in teaching.</li>
+                <li><strong>Assessment Criteria:</strong> Clear criteria ensure that both teaching methods and student results are measured against ISTE standards.</li>
+                <li><strong>Extensions:</strong> Extra challenges like AI Ethics Debates help deepen students' understanding and engagement with digital citizenship.</li>
+            </ul>
+            <p>Overall, this assignment provides strong evidence of active teaching and mentoring in digital citizenship, meeting all the areas that ISTE evaluators look for.</p>
+            
+            <hr>
+            
+            <!-- Implementation Status Note -->
+            <h6><i class="fas fa-calendar-alt"></i> Implementation Status</h6>
+            <p><em>If you haven't used this learning experience yet, mention that in your reflection and give an estimated time for when you'll implement it.</em></p>
+            <p><strong>Current Status:</strong> This assignment is planned for the <strong>Spring Semester</strong>. We are preparing to integrate it smoothly into the current curriculum, ensuring all resources and materials are ready for a successful launch.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Optional: Smooth Scrolling -->
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
