@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Critique Activity</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTTXRNtVIF3sKgXoqNR5NcZb5ThqTPQcL69X+jhVHg6QzR8L1B+Z3VnDOW+V6VFHyfXhL6D0Qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f6f9;
+            scroll-behavior: smooth;
+        }
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #ffffff !important;
+        }
+        .navbar-nav .nav-link {
+            color: #dddddd !important;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #ffffff !important;
+        }
+        .header-section {
+            background-color: #1e7e34;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+        .header-section h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .header-section p {
+            font-size: 1.3rem;
+        }
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #1e7e34;
+            display: inline-block;
+            padding-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: #1e7e34;
+        }
+        .footer {
+            background-color: #212529;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+        }
+        .accordion-button:not(.collapsed) {
+            color: #ffffff;
+            background-color: #1e7e34;
+        }
+        /* Custom styles for ISTE Evaluator Modal */
+        .modal-header {
+            background-color: #1e7e34;
+            color: white;
+        }
+        .modal-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .student-example {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .student-example img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .student-example img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .enlarge-text {
+            text-align: center;
+            font-size: 1rem;
+            color: #555;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            display: none;
+            z-index: 99;
+        }
+        #backToTop button {
+            border: none;
+            outline: none;
+            background-color: #1e7e34;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #backToTop button:hover {
+            background-color: #155724;
+            transform: scale(1.1);
+        }
+        /* Footer Social Icons */
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #1e7e34;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">WebDesignClass</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <!-- ISTE Evaluator Button -->
+            <li class="nav-item">
+              <button type="button" class="btn btn-outline-info ms-3" data-bs-toggle="modal" data-bs-target="#isteModal">
+                <i class="fas fa-user-check"></i> ISTE Evaluators Click Here
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header-section">
+        <div class="container">
+            <h1>Website Critique Activity</h1>
+            <p>Analyze and Enhance Websites Through Collaboration and Creativity!</p>
+        </div>
+    </section>
+
+    <!-- Objective Section -->
+    <section id="objective" class="container my-5">
+        <h2 class="section-title"><i class="fas fa-bullseye"></i> Objective</h2>
+        <p>
+            In this activity, you'll work with a partner to critique a website based on Usability, Accessibility, and Aesthetics. You'll provide constructive feedback, engage in meaningful discussions, and add a fun meme or image to express your reactions. This project helps you develop critical thinking, digital citizenship, and collaborative skills.
+        </p>
+    </section>
+
+    <!-- Instructions Section -->
+    <section id="instructions" class="container my-5">
+        <h2 class="section-title"><i class="fas fa-tasks"></i> Instructions</h2>
+        <div class="accordion" id="assignmentAccordion">
+            <!-- Step 1: Team Up -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" 
+                    aria-expanded="true" aria-controls="collapseOne">
+                    1. Team Up
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Find a Partner:</strong> Pair up with a classmate who shares your interest in web design or a specific website.
+                    <br><br>
+                    <strong>Choose a Website:</strong> Together, select a website to critique. Here are some ideas:
+                    <ul>
+                        <li><strong>Pop Culture Option:</strong> Pick a website from your favorite movie, show, or celebrity.</li>
+                        <li><strong>Real-World Challenge:</strong> Choose a website from a charity, organization, or local business you care about.</li>
+                        <li><strong>Shared Interest:</strong> Any website that both of you find interesting!</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            <!-- Step 2: Critique the Website -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Critique the Website
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Explore and Discuss:</strong> Spend some time browsing the website with your partner.
+                    <br><br>
+                    <strong>Focus Areas:</strong> Evaluate the site based on:
+                    <ul>
+                        <li><strong>Usability (1-10):</strong> How easy is it to navigate? Can users find what they need without confusion?</li>
+                        <li><strong>Accessibility (1-10):</strong> Is the site usable for everyone, including people with disabilities? Use tools like <a href="https://wave.webaim.org/" target="_blank">WAVE</a> and Chrome's Lighthouse to assess accessibility.</li>
+                        <li><strong>Aesthetics (1-10):</strong> How appealing is the design? Do the colors, fonts, and layout enhance the user experience?</li>
+                    </ul>
+                  </div>
+                </div>
+            </div>
+            <!-- Step 3: Add a Meme or Image -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    3. Add a Meme or Image
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Express Your Reaction:</strong> Spice up your critique by adding a meme or image that represents your thoughts about the website’s design or what you think the design team was aiming for.
+                  </div>
+                </div>
+            </div>
+            <!-- Step 4: Post Your Critique -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    4. Post Your Critique
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Create a Discussion Post:</strong> Go to the discussion board and start a new post.
+                    <br><br>
+                    <strong>Use the Template Below:</strong> Organize your critique with specific examples from the website.
+                    <br><br>
+                    <strong>Template:</strong>
+                    <pre class="bg-light p-3 rounded">
+Website: [Include the URL here]
+
+Usability: [Write a few sentences about how easy or difficult it was to navigate the site. Mention specific features that helped or hindered usability. Score: 1-10]
+
+Accessibility: [Discuss whether the site is accessible to everyone. Highlight any tools or features that support accessibility or areas where the site could improve. Use the WAVE tool or Lighthouse to check accessibility and mention what you find. Score: 1-10]
+
+Aesthetics: [Describe the overall look and feel of the site. Talk about the design elements like colors, fonts, and images, and how they contribute to the user experience. Score: 1-10]
+
+Fun Enhancement: [Here’s a quirky idea that could improve the site—e.g., add an interactive game, change the color scheme, or make navigation more fun!]
+
+Meme/Image: [Include your meme or image reaction here.]
+                    </pre>
+                  </div>
+                </div>
+            </div>
+            <!-- Step 5: Engage with Your Classmates -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    5. Engage with Your Classmates
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" 
+                  data-bs-parent="#assignmentAccordion">
+                  <div class="accordion-body">
+                    <strong>Read and Respond:</strong> Check out at least two other critiques posted by your classmates.
+                    <br><br>
+                    <strong>Provide Feedback:</strong> Share your thoughts on their evaluations. Do you agree with their assessments? Did they notice something you missed? Use this opportunity to learn from each other!
+                  </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Criteria Section -->
+    <section id="assessment" class="container my-5">
+        <h2 class="section-title"><i class="fas fa-check-circle"></i> Grading Criteria</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Complete Critique:</strong> Did you fill out all sections of the template and post your critique on the discussion board?</li>
+            <li class="list-group-item"><strong>Thoughtful Analysis:</strong> Did you and your partner consider all three areas (Usability, Accessibility, Aesthetics) in your critique?</li>
+            <li class="list-group-item"><strong>Participation:</strong> Did you engage with your classmates by responding to at least two other critiques?</li>
+        </ul>
+    </section>
+
+    <!-- Extension Ideas Section -->
+    <section id="extensions" class="container my-5">
+        <h2 class="section-title"><i class="fas fa-rocket"></i> Extension Ideas</h2>
+        <ul>
+            <li><strong>Advanced Accessibility Audit:</strong> Use additional tools or techniques to perform a more in-depth accessibility audit of the website.</li>
+            <li><strong>Redesign Proposal:</strong> Create a proposal for redesigning one aspect of the website based on your critique.</li>
+            <li><strong>Group Presentation:</strong> Present your findings and redesign proposals to the class.</li>
+        </ul>
+        <p>
+            These extensions allow you to dive deeper into web design principles and enhance your analytical and presentation skills. Let me know if you'd like to explore more advanced topics or need additional resources!
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>&copy; 2024 WebDesignClass. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div id="backToTop">
+        <button onclick="topFunction()" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    </div>
+
+    <!-- ISTE Evaluator Modal -->
+    <div class="modal fade" id="isteModal" tabindex="-1" aria-labelledby="isteModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="isteModalLabel"><i class="fas fa-user-check"></i> ISTE Standards Alignment</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>This <strong>Website Critique Activity</strong> aligns with <strong>ISTE Standards for Educators - Criteria 8</strong> by actively fostering digital citizenship, critical thinking, and collaborative skills among students. Here's how each part of the assignment meets ISTE criteria:</p>
+            <hr>
+            
+            <!-- Contextualization Section -->
+            <h6><i class="fas fa-users"></i> Contextualization</h6>
+            <p><strong>Identify Your Learners:</strong> This activity is designed for high school students in a web design or computer science class. The class consists of approximately 25 students with varying levels of experience in web design and AI tools.</p>
+            <p><strong>Summary of the Activity:</strong> The Website Critique Activity guides students through evaluating a website's usability, accessibility, and aesthetics. By collaborating with a partner, students enhance their analytical and communication skills while fostering responsible digital citizenship.</p>
+            <hr>
+            
+            <!-- Lesson Plans and Unit Plans -->
+            <h6><i class="fas fa-book-open"></i> Lesson Plans and Unit Plans</h6>
+            <p>The activity is structured with clear, step-by-step instructions that integrate seamlessly into lesson plans focused on digital citizenship and web design. Each step emphasizes ethical considerations, usability principles, and collaborative analysis.</p>
+            <hr>
+            
+            <!-- Student Work Samples -->
+            <h6><i class="fas fa-file-alt"></i> Student Work Samples</h6>
+            <p>Students are required to submit comprehensive critiques using the provided template, demonstrating their understanding of usability, accessibility, and aesthetics. Their reflections and engagement with classmates further showcase their grasp of digital citizenship and collaborative skills.</p>
+            
+            <!-- Student Example 1 -->
+            <div class="student-example">
+                <h6><strong>Student Example 1:</strong> Justin Green, Dillon Miller</h6>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modalSpotify">
+                    <img src="spotify.png" alt="Student example discussion post" class="img-fluid">
+                </a>
+                <p class="enlarge-text">Click to enlarge</p>
+            </div>
+            
+            <!-- Student Example 2 -->
+            <div class="student-example">
+                <h6><strong>Student Example 2:</strong> [Student Name]</h6>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modalReply">
+                    <img src="reply.png" alt="Student reply example" class="img-fluid">
+                </a>
+                <p class="enlarge-text">Click to enlarge</p>
+            </div>
+            <hr>
+            
+            <!-- Documentation of Discussions and Activities -->
+            <h6><i class="fas fa-comments"></i> Documentation of Discussions and Activities</h6>
+            <p>The assignment includes reflection tasks where students discuss their findings and provide feedback on their peers' critiques. This encourages meaningful conversations around web design principles and responsible digital tool usage.</p>
+            <hr>
+            
+            <!-- Modeling Responsible Digital Citizenship -->
+            <h6><i class="fas fa-user-tie"></i> Modeling Responsible Digital Citizenship</h6>
+            <p>By guiding students in creating ethical content and giving proper credit, educators demonstrate responsible digital citizenship. The activity emphasizes the importance of ethical standards, accessibility, and user-centered design, setting a strong example for students.</p>
+            <hr>
+            
+            <!-- Additional Evidence -->
+            <h5 class="mt-4"><i class="fas fa-lightbulb"></i> Additional Evidence</h5>
+            <ul>
+                <li><strong>Interactive Elements:</strong> The use of accordions and structured templates demonstrates the integration of technology in teaching and enhances student engagement.</li>
+                <li><strong>Assessment Criteria:</strong> Clear grading criteria ensure that both teaching methods and student outcomes are evaluated against ISTE standards.</li>
+                <li><strong>Extensions:</strong> Additional challenges like redesign proposals and presentations further deepen students' understanding and application of web design principles.</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Image Modals (Placed Outside ISTE Modal) -->
+    
+    <!-- Modal for Spotify.png -->
+    <div class="modal fade" id="modalSpotify" tabindex="-1" aria-labelledby="modalSpotifyLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalSpotifyLabel">Student Example 1: Justin Green, Dillon Miller</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="spotify.png" alt="Student example discussion post" class="img-fluid mb-3">
+            <p><strong>Spotify.com:</strong> Great Website, But At What Cost</p>
+            <p><strong>Quick Summary:</strong> Spotify is a digital app/website that allows you to listen to music and stream podcasts from around the world. It is currently the best and most popular digital music streaming platform, offering millions of songs and content to choose from. The website is excellent for users who want to stream music and for aspiring artists to share their own music.</p>
+            <p><strong>Usability (Free):</strong> 6/10<br>
+            <strong>Usability (Paid):</strong> 9/10<br>
+            Spotify has many helpful features, such as a sticky playback control bar, high sound quality, easy navigation, and detailed artist information. However, most premium features are locked behind a subscription, making the free version less user-friendly due to excessive advertisements. Reducing ad quantity or finding alternative funding methods could improve usability for free users.</p>
+            <p><strong>Accessibility:</strong> 8/10<br>
+            Spotify is relatively accessible, with high-contrast text and large fonts. However, issues like empty buttons and missing alt text for images hinder accessibility. Intrusive advertisements also negatively impact the user experience. Overall, while accessibility is good, there are areas for improvement.</p>
+            <p><strong>Aesthetics:</strong> 9/10<br>
+            Spotify boasts a sleek and minimalist design with a pleasing color scheme of green and black. User-generated content like album covers may clash with the overall theme, but the website remains visually appealing and functional.</p>
+            <p><strong>Fun Enhancement:</strong> To improve the site, Spotify could incorporate more satisfying advertisement experiences for free users, such as contextually relevant ads or interactive ad elements that engage users without disrupting their listening experience.</p>
+            <p><strong>Meme/Image:</strong> <em>Spotify, with their clean and minimalist web design and color scheme:</em></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Modal for reply.png -->
+    <div class="modal fade" id="modalReply" tabindex="-1" aria-labelledby="modalReplyLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalReplyLabel">Student Example 2: [Student Name]</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="reply.png" alt="Student reply example" class="img-fluid mb-3">
+            <p><strong>Comment 1:</strong> Your suggestion for improvement sounds like a good idea! An ad campaign for someone's tour or album could generate excitement within the community. Your review was comprehensive and well-organized. Good work! :D</p>
+            <p><strong>Comment 2:</strong> I agree that premium is better. The free version can use some clean up; it's too cluttered with too many ads. There are better alternatives at the free price point. However, I disagree that there's a lot of information about the artists. While it's true for popular artists, lesser-known artists lack detailed background information compared to other sites.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div id="backToTop">
+        <button onclick="topFunction()" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        // ISTE Evaluators Button functionality is handled by Bootstrap's modal component
+
+        // Back to Top Button Functionality
+        //Get the button
+        var backToTopButton = document.getElementById("backToTop");
+
+        // When the user scrolls down 100px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            backToTopButton.style.display = "block";
+          } else {
+            backToTopButton.style.display = "none";
+          }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
