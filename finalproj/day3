@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Design Guide - Project Day 3</title>
+  <!-- Include Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Playfair+Display:400,700" rel="stylesheet">
+  <!-- Include Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-yr7vqpqbYgQNUlSJFGhFSH/4BQldTkWdzajI3BhClJ1l9H+zgAYGQJ05hdJ9K60g" crossorigin="anonymous">
+  <!-- Include Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Styles */
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    /* Navigation Link Hover Effect */
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: #3b82f6;
+      left: 0;
+      bottom: 0;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+  <div class="max-w-4xl mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-8">Web Design Guide - Project Day 3</h1>
+    <!-- Tabs Navigation -->
+    <div class="mb-4 border-b">
+      <nav class="flex space-x-4">
+        <button class="tab-button flex items-center gap-2 pb-2 text-gray-600 border-b-2 border-transparent hover:border-blue-500" data-tab="colors">
+          <i class="fas fa-palette"></i>
+          Colors
+        </button>
+        <button class="tab-button flex items-center gap-2 pb-2 text-gray-600 border-b-2 border-transparent hover:border-blue-500" data-tab="typography">
+          <i class="fas fa-font"></i>
+          Typography
+        </button>
+        <button class="tab-button flex items-center gap-2 pb-2 text-gray-600 border-b-2 border-transparent hover:border-blue-500" data-tab="layouts">
+          <i class="fas fa-th-large"></i>
+          Layouts
+        </button>
+        <button class="tab-button flex items-center gap-2 pb-2 text-gray-600 border-b-2 border-transparent hover:border-blue-500" data-tab="interactive">
+          <i class="fas fa-mouse-pointer"></i>
+          Interactive Elements
+        </button>
+        <button class="tab-button flex items-center gap-2 pb-2 text-gray-600 border-b-2 border-transparent hover:border-blue-500" data-tab="accessibility">
+          <i class="fas fa-universal-access"></i>
+          Accessibility
+        </button>
+        <button class="tab-button flex items-center gap-2 pb-2 text-gray-600 border-b-2 border-transparent hover:border-blue-500" data-tab="resources">
+          <i class="fas fa-link"></i>
+          Resources
+        </button>
+      </nav>
+    </div>
+
+    <!-- Colors Tab Content -->
+    <div class="tab-content active" id="colors">
+      <div class="bg-white shadow rounded-lg mb-6">
+        <div class="border-b px-4 py-2">
+          <h2 class="text-xl font-bold">Color Theory &amp; Palettes</h2>
+        </div>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-4">Why Colors Matter</h3>
+          <p class="mb-4">
+            Colors set the mood for your website and guide users' attention.
+            The right color scheme can:
+          </p>
+          <ul class="list-disc pl-6 mb-6">
+            <li>Create emotional connections</li>
+            <li>Improve readability</li>
+            <li>Guide user attention</li>
+            <li>Strengthen brand identity</li>
+          </ul>
+
+          <!-- Color Examples -->
+          <h3 class="text-xl font-semibold mb-4">Example Color Moods</h3>
+          <div class="grid gap-4 mb-6">
+            <div class="h-24 w-full rounded-lg flex items-center justify-center text-white mb-4" style="background-color: #2C3E50;">
+              Professional &amp; Corporate
+            </div>
+            <div class="h-24 w-full rounded-lg flex items-center justify-center text-white mb-4" style="background-color: #27AE60;">
+              Fresh &amp; Natural
+            </div>
+            <div class="h-24 w-full rounded-lg flex items-center justify-center text-white mb-4" style="background-color: #E74C3C;">
+              Energetic &amp; Bold
+            </div>
+            <div class="h-24 w-full rounded-lg flex items-center justify-center text-white mb-4" style="background-color: #8E44AD;">
+              Creative &amp; Luxurious
+            </div>
+          </div>
+
+          <!-- Interactive Color Picker -->
+          <h3 class="text-xl font-semibold mb-4">Interactive Color Picker</h3>
+          <div class="mb-6">
+            <input type="color" id="colorPicker" value="#4A90E2" class="mb-2">
+            <div id="colorDisplay" class="h-20 rounded-lg flex items-center justify-center text-white" style="background-color: #4A90E2;">
+              #4A90E2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Typography Tab Content -->
+    <div class="tab-content" id="typography">
+      <div class="bg-white shadow rounded-lg mb-6">
+        <div class="border-b px-4 py-2">
+          <h2 class="text-xl font-bold">Typography Essentials</h2>
+        </div>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-4">Why Typography Matters</h3>
+          <p class="mb-6">
+            Good typography makes your content both readable and memorable.
+            It helps establish hierarchy and guides users through your content.
+          </p>
+
+          <!-- Interactive Font Selector -->
+          <h3 class="text-xl font-semibold mb-4">Interactive Font Selector</h3>
+          <div class="mb-6">
+            <select id="fontSelector" class="mb-2 p-2 border rounded">
+              <option value="Roboto, sans-serif">Roboto (Sans-Serif)</option>
+              <option value="'Playfair Display', serif">Playfair Display (Serif)</option>
+              <option value="'Courier New', monospace">Courier New (Monospace)</option>
+              <option value="Cursive, cursive">Cursive</option>
+            </select>
+            <p id="fontDisplay" class="text-xl">The quick brown fox jumps over the lazy dog.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Layouts Tab Content -->
+    <div class="tab-content" id="layouts">
+      <div class="bg-white shadow rounded-lg mb-6">
+        <div class="border-b px-4 py-2">
+          <h2 class="text-xl font-bold">Layout Patterns</h2>
+        </div>
+        <div class="p-4">
+          <!-- Interactive Layout Selector -->
+          <h3 class="text-xl font-semibold mb-4">Interactive Layout Selector</h3>
+          <div class="mb-6">
+            <select id="layoutSelector" class="mb-2 p-2 border rounded">
+              <option value="hero">Hero Layout</option>
+              <option value="z-pattern">Z-Pattern Layout</option>
+            </select>
+            <div id="layoutDisplay"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Elements Tab Content -->
+    <div class="tab-content" id="interactive">
+      <div class="bg-white shadow rounded-lg mb-6">
+        <div class="border-b px-4 py-2">
+          <h2 class="text-xl font-bold">Interactive Elements</h2>
+        </div>
+        <div class="p-4">
+          <!-- Button Effects -->
+          <h3 class="text-xl font-semibold mb-4">Button Effects</h3>
+          <div class="grid grid-cols-3 gap-4 mb-6">
+            <!-- Color Change Button -->
+            <button class="w-full bg-blue-500 text-white p-4 rounded transition-colors duration-300 hover:bg-blue-700 focus:outline-none">
+              Color Change
+            </button>
+            <!-- Scale Up Button -->
+            <button class="w-full bg-green-500 text-white p-4 rounded transform transition-transform duration-300 hover:scale-110 focus:outline-none">
+              Scale Up
+            </button>
+            <!-- Lift Effect Button -->
+            <button class="w-full bg-purple-500 text-white p-4 rounded shadow transition-all duration-300 hover:-translate-y-2 hover:shadow-lg focus:outline-none">
+              Lift Effect
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accessibility Tab Content -->
+    <div class="tab-content" id="accessibility">
+      <div class="bg-white shadow rounded-lg mb-6">
+        <div class="border-b px-4 py-2">
+          <h2 class="text-xl font-bold">Web Accessibility</h2>
+        </div>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-4">Why Accessibility Matters</h3>
+          <p class="mb-6">
+            Web accessibility ensures that websites are usable by everyone,
+            including people with disabilities. It's crucial for inclusivity
+            and often legally required.
+          </p>
+
+          <h3 class="text-xl font-semibold mb-4">Best Practices</h3>
+          <ul class="list-disc pl-6 mb-6">
+            <li>Provide alternative text for images</li>
+            <li>Ensure sufficient color contrast</li>
+            <li>Use semantic HTML elements</li>
+            <li>Make interactive elements keyboard accessible</li>
+            <li>Design with screen readers in mind</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resources Tab Content -->
+    <div class="tab-content" id="resources">
+      <div class="bg-white shadow rounded-lg mb-6">
+        <div class="border-b px-4 py-2">
+          <h2 class="text-xl font-bold">Additional Resources</h2>
+        </div>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold mb-4">Useful Links</h3>
+          <ul class="list-disc pl-6 mb-6">
+            <li>
+              <a href="https://www.w3schools.com" target="_blank" class="text-blue-500 underline">
+                W3Schools - Web Design Tutorials
+              </a>
+            </li>
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank" class="text-blue-500 underline">
+                MDN Web Docs - Accessibility
+              </a>
+            </li>
+            <li>
+              <a href="https://www.a11yproject.com" target="_blank" class="text-blue-500 underline">
+                The A11Y Project - Accessibility Resources
+              </a>
+            </li>
+            <li>
+              <a href="https://tailwindcss.com/docs" target="_blank" class="text-blue-500 underline">
+                Tailwind CSS Documentation
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Tab Functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const tab = button.getAttribute('data-tab');
+
+        tabContents.forEach(content => {
+          content.classList.remove('active');
+          if (content.id === tab) {
+            content.classList.add('active');
+          }
+        });
+
+        tabButtons.forEach(btn => btn.classList.remove('border-blue-500', 'text-blue-500'));
+        button.classList.add('border-blue-500', 'text-blue-500');
+      });
+    });
+
+    // Interactive Color Picker
+    const colorPicker = document.getElementById('colorPicker');
+    const colorDisplay = document.getElementById('colorDisplay');
+
+    colorPicker.addEventListener('input', () => {
+      const color = colorPicker.value;
+      colorDisplay.style.backgroundColor = color;
+      colorDisplay.textContent = color;
+    });
+
+    // Interactive Font Selector
+    const fontSelector = document.getElementById('fontSelector');
+    const fontDisplay = document.getElementById('fontDisplay');
+
+    fontSelector.addEventListener('change', () => {
+      fontDisplay.style.fontFamily = fontSelector.value;
+    });
+
+    // Interactive Layout Selector
+    const layoutSelector = document.getElementById('layoutSelector');
+    const layoutDisplay = document.getElementById('layoutDisplay');
+
+    const layouts = {
+      'hero': `
+        <div class="space-y-4">
+          <div class="bg-blue-100 h-64 rounded-lg flex items-center justify-center">
+            Hero Image/Message
+          </div>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-gray-100 h-32 rounded-lg flex items-center justify-center">
+              Feature 1
+            </div>
+            <div class="bg-gray-100 h-32 rounded-lg flex items-center justify-center">
+              Feature 2
+            </div>
+            <div class="bg-gray-100 h-32 rounded-lg flex items-center justify-center">
+              Feature 3
+            </div>
+          </div>
+        </div>
+      `,
+      'z-pattern': `
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="bg-blue-100 h-16 w-32 rounded-lg"></div>
+            <div class="bg-blue-100 h-16 w-32 rounded-lg"></div>
+          </div>
+          <div class="flex justify-between items-center flex-row-reverse">
+            <div class="bg-blue-100 h-16 w-32 rounded-lg"></div>
+            <div class="bg-blue-100 h-16 w-32 rounded-lg"></div>
+          </div>
+        </div>
+      `
+    };
+
+    layoutSelector.addEventListener('change', () => {
+      layoutDisplay.innerHTML = layouts[layoutSelector.value];
+    });
+
+    // Initialize layout display
+    layoutDisplay.innerHTML = layouts['hero'];
+  </script>
+</body>
+</html>
